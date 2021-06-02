@@ -115,7 +115,6 @@ def windrose_from_data(
             for year, wind_data in annual_wind_dict.items():
                 if windrose_data_not_empty(wind_data, False):
                     print(f"Generating wind rose for {year}")
-                    print(wind_data)
                     wind_rose.data = wind_data
                     wind_rose.year_string = str(year)
                     wind_rose.png_file_path = update_output_path(new_output_folder, wind_rose.station, wind_rose.rose_type, wind_rose.year_string)
