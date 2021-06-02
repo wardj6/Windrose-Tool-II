@@ -115,6 +115,8 @@ class Rpy2WindRose:
         Generates an instance of the class WindRose with default variables that will be converted to R openair windrose settings
         :param data: a pandas dataframe object with 3 columns - 'date', 'ws', 'wd'
         """
+        __version__ = "1.0.0"
+        
         self.data = data
         self.latitude = -34
         self.longitude = 151
