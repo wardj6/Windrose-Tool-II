@@ -121,7 +121,7 @@ def get_custom_data_period(date_string: str) -> list:
     dates = date_string.split("-")
     try:
         dates_i = [pd.to_datetime(x.strip(), dayfirst=True) for x in dates]
-    except:
+    except Exception:
         raise_error("The manually entered date period is not in the correct format and cannot be parsed - try again.", ValueError)
     else:
         return dates_i
@@ -337,14 +337,14 @@ def import_csv_data(file: str,
     try:
         start_datetime = pd.to_datetime(start_date, dayfirst=True) + pd.Timedelta(hours=start_hour)
         csv_date_range = pd.date_range(start=start_datetime, periods=num_hours, freq='h')
-    except:
+    except Exception:
         raise_error("Check start date is in the correct format '1/1/2019'", ValueError)
     else:
         csv_wind_df['date'] = csv_date_range
     try:
         csv_wind_df['ws'] = csv_working_df.iloc[:, ws_col].tolist()
         csv_wind_df['wd'] = csv_working_df.iloc[:, wd_col].tolist()
-    except:
+    except Exception:
         raise_error("Input number of hours does not match the length of the csv", ValueError)
     # convert missing aermod values (i.e. 999 or 9999) to NaN
     csv_wind_df.ws = csv_wind_df.apply(lambda x: np.nan if x['ws'] > 100 else x['ws'], axis=1)
