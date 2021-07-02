@@ -183,6 +183,8 @@ class Rpy2WindRose:
         self.openair.windRose(mydata=self.data,
                               type=r_type,
                               hemisphere=self.hemisphere,
+                              latitude=self.latitude,
+                              longitude=self.longitude,
                               layout=self.base.c(self.rose_layout[0], self.rose_layout[1]),
                               border=self.border,
                               angle=self.ray_angle,
