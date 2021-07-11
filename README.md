@@ -9,4 +9,6 @@ Data can be input via the databases specified in the paths in the __params__ fil
 
 The WRT uses the gooey package to create a simple GUI that allows easy selection of data and options.
 
+Sample png outputs have been uploaded.
+
 This is an ongoing project and new features may be added in the future. 
